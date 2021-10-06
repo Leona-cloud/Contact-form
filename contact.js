@@ -33,7 +33,7 @@ app.post('/', (req, res)=>{
     });
 
     const mailOptions = {
-        from: req.payload,
+        from: req.body.email,
         to: process.env.SMTP_USER,
         subject: `Message from ${req.body.email}: {req.body.subject}`,
         text: req.body.message
